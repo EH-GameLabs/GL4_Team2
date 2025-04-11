@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class LightingManager : MonoBehaviour
 {
-    [SerializeField] private GameObject dayManager;
+    // global switch
+    public bool disableFlickering = false;
 
+    // internal variables
     private Light[] inGameLights;
     private float lightFlickerTimer;
     private float lightFlickerProbability;
@@ -13,15 +15,57 @@ public class LightingManager : MonoBehaviour
 
     private float countDown;
 
-    private void Awake()
+    // default light values
+    private float[] baseIntensities;
+
+    private void Start()
     {
+        // Get light components in scene
         inGameLights = FindObjectsOfType<Light>();
 
+        // save initial values for lights
+        baseIntensities = new float[inGameLights.Length];
+        for (int i = 0; i < inGameLights.Length; i++)
+        {
+            baseIntensities[i] = inGameLights[i].intensity;
+        }
     }
 
     void Update()
     {
-        FlickerRandomLight();
+        if (!disableFlickering) FlickerRandomLight();
+    }
+
+    public void TurnOffAllLights()
+    {
+        for(int i = 0; i < inGameLights.Length; i++)
+        {
+            // get paramters
+            Light light = inGameLights[i];
+            MeshRenderer lightRenderer = light.gameObject.GetComponent<MeshRenderer>();
+            int emissionPropertyID = Shader.PropertyToID("_EmissionColor");
+
+            // modify parameters
+            light.intensity = 0;
+            lightRenderer.material.color = Color.black;
+            lightRenderer.material.SetColor(emissionPropertyID, Color.black);
+        }
+    }
+
+    public void TurnOnAllLights()
+    {
+        for (int i = 0; i < inGameLights.Length; i++)
+        {
+            // get paramters
+            Light light = inGameLights[i];
+            MeshRenderer lightRenderer = light.gameObject.GetComponent<MeshRenderer>();
+            int emissionPropertyID = Shader.PropertyToID("_EmissionColor");
+
+            // modify parameters
+            light.intensity = baseIntensities[i];
+            lightRenderer.material.color = Color.white;
+            lightRenderer.material.SetColor(emissionPropertyID, Color.white);
+        }
     }
 
     public void UpdateDay(SO_Day newDay)
@@ -37,13 +81,11 @@ public class LightingManager : MonoBehaviour
         if (countDown <= 0) {
             float random = Random.Range(0, 100);
             if (random < lightFlickerProbability) {
-                Debug.Log("Random:" + random);
                 Light light = inGameLights[Random.Range(0, inGameLights.Length)];
                 StartCoroutine(FlickerForSeconds(light, flickerLength));
             }
             countDown = lightFlickerTimer;
         }
-
     }
 
     private IEnumerator FlickerForSeconds(Light light, float seconds)

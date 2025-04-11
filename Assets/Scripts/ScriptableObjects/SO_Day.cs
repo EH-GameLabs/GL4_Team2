@@ -10,6 +10,8 @@ public class SO_Day : ScriptableObject
     public GameObject[] robots;
     [Tooltip("Number of robots to be examined in this day")]
     public int robotNumber;
+    [Tooltip("Sound effects that play randomly during this day")]
+    public AudioClip[] scaryEffects;
     [Tooltip("The time between scary ambient sound pulls in seconds")]
     public float soundTimer;
     [Tooltip("The probability of a random scary ambient sound playing every soundTimer seconds")]

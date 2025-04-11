@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// possibly Singleton
+
 public class DayManager : MonoBehaviour
 {
     public SO_Day currentDay;

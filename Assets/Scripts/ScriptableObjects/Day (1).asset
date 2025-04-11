@@ -14,7 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   robots: []
   robotNumber: 0
-  soundTimer: 1
+  scaryEffects:
+  - {fileID: 8300000, guid: 9bf66505f55d3d245a8964d7cbf726d2, type: 3}
+  - {fileID: 8300000, guid: 8b8ae6ef5cf486142a3e0a02291f48c4, type: 3}
+  - {fileID: 8300000, guid: 4cb2ce64d1e62e24cb63de72ea65313f, type: 3}
+  - {fileID: 8300000, guid: d5a062a94a2e6c844ba88e4eeef5f490, type: 3}
+  - {fileID: 8300000, guid: c1d1969b918478140ae8ddfe7f48af5e, type: 3}
+  - {fileID: 8300000, guid: c7024552d0acbbd499b5277652c5a8e7, type: 3}
+  - {fileID: 8300000, guid: ea2d8a81200a7694d89fb29eae27ef89, type: 3}
+  - {fileID: 8300000, guid: 4a66c10dd3d73434eba20353fef853ec, type: 3}
+  - {fileID: 8300000, guid: d3a15ca41c6492542af069667479ffec, type: 3}
+  - {fileID: 8300000, guid: 02669c24e4dc3f24db3cbeebc7a2db47, type: 3}
+  - {fileID: 8300000, guid: cf466331ca9bade44b2a2eb6fb5dcdbe, type: 3}
+  - {fileID: 8300000, guid: 8093beefe014a3841ac19ce86f6e5494, type: 3}
+  soundTimer: 5
   soundProbability: 50
   lightFlickerTimer: 1
   lightFlickerProbability: 50
