@@ -22,7 +22,6 @@ public class SoundPlayer : MonoBehaviour
         audioPlayer = GetComponent<AudioSource>();
     }
 
-
     void Update()
     {
         if (!muteSounds) PickAndPlayRandomSound();

@@ -10,10 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ac026ac05d2eba42828b8262e29d7be, type: 3}
-  m_Name: Day (1)
+  m_Name: Day 1
   m_EditorClassIdentifier: 
-  robots: []
-  robotNumber: 0
+  robots:
+  - {fileID: 8723138825880292145, guid: 82a49abf284c65a48bde119c8ca964f9, type: 3}
+  - {fileID: 8723138825880292145, guid: e6be95bd050cbe34389a89b12a411759, type: 3}
+  - {fileID: 8723138825880292145, guid: b978728470951234d9f3579360e97237, type: 3}
+  - {fileID: 8723138825880292145, guid: 05ec8b701dd738544a38d69e0d8b6d2b, type: 3}
+  - {fileID: 8723138825880292145, guid: f16ebeea967678f458cec60517a8cf9b, type: 3}
+  - {fileID: 8723138825880292145, guid: 18c0c8229a01fad4794aaa54a377116c, type: 3}
+  - {fileID: 8723138825880292145, guid: 6cd46278db792e84f96c20a306051ff8, type: 3}
+  robotNumber: 3
   scaryEffects:
   - {fileID: 8300000, guid: 9bf66505f55d3d245a8964d7cbf726d2, type: 3}
   - {fileID: 8300000, guid: 8b8ae6ef5cf486142a3e0a02291f48c4, type: 3}

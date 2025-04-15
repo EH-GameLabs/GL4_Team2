@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Defines the properties of a given in-game day
-[CreateAssetMenu(fileName = "Day (1)", menuName = "GameData/Day")]
+[CreateAssetMenu(fileName = "Day", menuName = "GameData/Day")]
 public class SO_Day : ScriptableObject
 {
     [Tooltip("The list of possible robot prefabs that spawn in this day")]
     public GameObject[] robots;
-    [Tooltip("Number of robots to be examined in this day")]
+    [Tooltip("Number of robots to be examined in this day (Must be less or equal the number of robots in this day)")]
     public int robotNumber;
     [Tooltip("Sound effects that play randomly during this day")]
     public AudioClip[] scaryEffects;
