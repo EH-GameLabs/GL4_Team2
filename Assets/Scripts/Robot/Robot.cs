@@ -72,6 +72,12 @@ public class Robot : MonoBehaviour
 
     public string GetSerialCode() { return serialCode; }
     public ExoSkeletonType GetExoSkeletonType() { return exoskeleton; }
+    public CoreControlType GetCoreControlType() { return coreControl; }
+    public string GetRobotCode() { return robotCode; }
+    public string GetSoundControlCode() { return soundControl.name; }
+    public bool GetLightingControl() { return lightingControl; }
+    public EndoskeletonType GetEndoskeletonType() { return endoskeleton; }
+
 
     #endregion
 }

@@ -16,6 +16,7 @@ public enum RobotVariants
 
 public enum ExoSkeletonType
 {
+    Ok,
     Defect,
     DifferentColor,
 }
@@ -29,7 +30,7 @@ public enum CoreControlType
 public enum EndoskeletonType
 {
     Intact,
-    Complete,
+    Broken,
     Missing,
 }
 #endregion
