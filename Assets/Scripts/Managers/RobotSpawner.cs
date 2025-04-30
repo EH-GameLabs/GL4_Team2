@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
+// Singleton to fetch current robot for game over decision
 public class RobotSpawner : MonoBehaviour
 {
     [SerializeField] private Transform spawnPoint;
@@ -11,10 +13,31 @@ public class RobotSpawner : MonoBehaviour
     [SerializeField] private Transform endPoint;
     [SerializeField] private float conveyorSpeed;
 
+    public static RobotSpawner Instance { get; private set; }
+
+    [Header("Debug Variables")]
     [SerializeField] private List<GameObject> selectedRobots = new List<GameObject>();
-    private GameObject currentRobot = null;
+    public GameObject currentRobot = null;
     public bool robotIn = false;
     public bool robotOut = false;
+
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Start()
+    {
+        robotIn = true;
+    }
 
     // takes robots selected in day Manager and spawns them in order
 
@@ -34,18 +57,13 @@ public class RobotSpawner : MonoBehaviour
         currentRobot = Instantiate(currentRobot, spawnPoint);
     }
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if(robotIn) MoveRobotIntoScene();
         if(robotOut) MoveRobotOutOfScene();
     }
 
-    private void MoveRobotIntoScene()
+    public void MoveRobotIntoScene()
     {
         if (currentRobot != null)
         {
@@ -61,13 +79,12 @@ public class RobotSpawner : MonoBehaviour
         }
     }
 
-    private void MoveRobotOutOfScene()
+    public void MoveRobotOutOfScene()
     {
         if (currentRobot != null)
         {
             if ((currentRobot.transform.position - endPoint.position).magnitude > 0.001)
             {
-                //Thread.Sleep(2000); // wait 2 seconds
                 currentRobot.transform.position = Vector3.MoveTowards(currentRobot.transform.position,
                                                                     endPoint.position,
                                                                     conveyorSpeed * Time.deltaTime);
@@ -75,9 +92,9 @@ public class RobotSpawner : MonoBehaviour
             else
             {
                 Destroy(currentRobot.gameObject);
-                SpawnNextRobot();
+                //SpawnNextRobot();
                 robotOut = false;
-                robotIn = true;
+                //robotIn = true;
             }
         }
         

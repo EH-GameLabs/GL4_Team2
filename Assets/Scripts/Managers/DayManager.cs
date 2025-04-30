@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System;
-using System.Runtime.ExceptionServices;
 
-// possibly Singleton
+// Singleton
 
 public class DayManager : MonoBehaviour
 {
     // singleton
-    public static DayManager instance { get; private set; }
+    public static DayManager Instance { get; private set; }
 
     // List of all the data of ingame days
     [SerializeField] private SO_Day[] days;
@@ -24,13 +23,13 @@ public class DayManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        if(Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
         else
         {
-            Destroy(instance.gameObject);
+            Destroy(Instance.gameObject);
         }
 
         // Reference and initialize components

@@ -3,21 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Singleton
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance {  get; private set; }
+    public static GameManager Instance {  get; private set; }
+
+    public int dayReached;
 
     private void Awake()
     {
-        if(instance == null)
+        if(Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
         else
         {
-            Destroy(instance.gameObject);
+            Destroy(Instance.gameObject);
         }
+
+        // load player prefs
+        dayReached = PlayerPrefs.GetInt("DayReached");
     }
+
 
     // Triggers game over screen in UI
     public void GameOver()
@@ -30,4 +37,12 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Giovanni"); // TODO replace with main scene name
     }
+
+    // save player prefs
+    public void SaveDay()
+    {
+        PlayerPrefs.SetInt("DayReached", dayReached);
+    }
+
+
 }
