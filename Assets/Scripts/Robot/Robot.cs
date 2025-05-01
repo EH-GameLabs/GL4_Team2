@@ -8,21 +8,28 @@ public class Robot : MonoBehaviour
     [SerializeField] private SO_Robot sO_Robot;
 
     // Variants variables
-    private string serialCode;
-    private ExoSkeletonType exoskeleton;
-    private CoreControlType coreControl;
-    private string robotCode;
-    private AudioClip soundControl;
-    private bool lightingControl;
-    private EndoskeletonType endoskeleton;
-
+    [HideInInspector] public string serialCode;
+    [HideInInspector] public ExoSkeletonType exoskeleton;
+    [HideInInspector] public CoreControlType coreControl;
+    [HideInInspector] public string robotCode;
+    [HideInInspector] public AudioClip soundControl;
+    [HideInInspector] public bool lightingControl;
+    [HideInInspector] public EndoskeletonType endoskeleton;
 
     private void Start()
     {
-        CheckVariants();
+        serialCode = null;
+        exoskeleton = ExoSkeletonType.Ok;
+        coreControl = CoreControlType.Ok;
+        robotCode = null;
+        soundControl = null;
+        lightingControl = false;
+        endoskeleton = EndoskeletonType.Intact;
+
+        InitializeVariants();
     }
 
-    private void CheckVariants()
+    private void InitializeVariants()
     {
         if (sO_Robot.robotVariants.HasFlag(RobotVariants.SerialCode))
         {
