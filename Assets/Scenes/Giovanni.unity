@@ -846,6 +846,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   days:
   - {fileID: 11400000, guid: d0e37623083a0c341a792664d96d3608, type: 2}
+  - {fileID: 11400000, guid: b47ac6f8ea0833b4fa2eea4b8c5f58f4, type: 2}
+  currentDayIndex: 0
 --- !u!1 &428439879
 GameObject:
   m_ObjectHideFlags: 0

@@ -52,9 +52,26 @@ public class RobotSpawner : MonoBehaviour
 
     public void SpawnNextRobot()
     {
-        currentRobot = selectedRobots.First();
-        selectedRobots.Remove(currentRobot);
-        currentRobot = Instantiate(currentRobot, spawnPoint);
+        if (selectedRobots.Count > 0)
+        {
+            // if there are stil robots, spawn next
+            currentRobot = selectedRobots.First();
+            selectedRobots.Remove(currentRobot);
+            currentRobot = Instantiate(currentRobot, spawnPoint);
+        }
+        else if (DayManager.Instance.currentDayIndex < DayManager.Instance.days.Length)
+        {
+            // otherwise move to next dayif there still are
+            Debug.Log("Day passed!");
+            DayManager.Instance.GoToNextDay();
+            GameManager.Instance.dayReached += 1;
+            //GameManager.Instance.SaveDay(); // TODO uncomment for build, this saves the day reached by player
+        }
+        else
+        {
+            // Win condition
+            Debug.Log("Victory!");
+        }
     }
 
     void Update()
@@ -92,9 +109,7 @@ public class RobotSpawner : MonoBehaviour
             else
             {
                 Destroy(currentRobot.gameObject);
-                //SpawnNextRobot();
                 robotOut = false;
-                //robotIn = true;
             }
         }
         

@@ -12,14 +12,14 @@ public class DayManager : MonoBehaviour
     public static DayManager Instance { get; private set; }
 
     // List of all the data of ingame days
-    [SerializeField] private SO_Day[] days;
+    [SerializeField] public SO_Day[] days;
+    public int currentDayIndex;
 
     // internals
     private SO_Day currentDay;
     private LightingManager lightingManager;
     private SoundPlayer soundPlayer;
     private RobotSpawner robotSpawner;
-    private int currentDayIndex;
 
     private void Awake()
     {
