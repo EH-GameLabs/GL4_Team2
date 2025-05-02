@@ -15,11 +15,11 @@ public class HudUI : BaseUI
 
     public void RotateToTheLeft()
     {
-
+        FindAnyObjectByType<DummyRobot>().RotateToTheLeft();
     }
 
     public void RotateToTheRight()
     {
-
+        FindAnyObjectByType<DummyRobot>().RotateToTheRight();
     }
 }

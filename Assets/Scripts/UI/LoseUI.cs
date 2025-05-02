@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoseUI : BaseUI
 {
     public void GoToMainMenu()
     {
-        UIManager.instance.ShowUI(UIManager.GameUI.MainMenu);
+        SceneManager.LoadScene(0);
     }
 }

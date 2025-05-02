@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseUI : BaseUI
 {
 
     public void GoToMainMenu()
     {
-        UIManager.instance.ShowUI(UIManager.GameUI.MainMenu);
-        // reload scene
+        SceneManager.LoadScene(0);
     }
 
     public void GoToHud()
