@@ -11,10 +11,18 @@ public class DummyRobot : MonoBehaviour
     [SerializeField] public Sprite leftSprite;
     [SerializeField] public Sprite rightSprite;
 
+    [Header("Endoskeleton Sprites")]
+    public bool isEndoActive = false;
+    [SerializeField] public Sprite frontEndoSprite;
+    [SerializeField] public Sprite backEndoSprite;
+    [SerializeField] public Sprite leftEndoSprite;
+    [SerializeField] public Sprite rightEndoSprite;
+
     [Header("Robot Data")]
     [SerializeField] private SO_Robot SO_Robot;
     [SerializeField] public bool isFaulty;
     [SerializeField] public SpriteRenderer spriteRenderer;
+    [SerializeField] public string phrase;
 
     #region RANDOMIZED VARIABLES
     //// Variants variables --> TODO: REMOVE THIS AND USE SO_Robot
@@ -98,27 +106,65 @@ public class DummyRobot : MonoBehaviour
 
     public void RotateToTheRight()
     {
-        // Controlla quale sprite è attualmente visualizzato e passa al successivo
-        if (spriteRenderer.sprite == frontSprite)
-            spriteRenderer.sprite = rightSprite;
-        else if (spriteRenderer.sprite == rightSprite)
-            spriteRenderer.sprite = backSprite;
-        else if (spriteRenderer.sprite == backSprite)
-            spriteRenderer.sprite = leftSprite;
+        if (!VariantManager.Instance.lightsOn)
+        {
+            // lights off variant
+        }
+        else if (isEndoActive)
+        {
+            // endoskeleton variant
+            if (spriteRenderer.sprite == frontEndoSprite)
+                spriteRenderer.sprite = rightEndoSprite;
+            else if (spriteRenderer.sprite == rightEndoSprite)
+                spriteRenderer.sprite = backEndoSprite;
+            else if (spriteRenderer.sprite == backEndoSprite)
+                spriteRenderer.sprite = leftEndoSprite;
+            else
+                spriteRenderer.sprite = frontEndoSprite;
+        }
         else
-            spriteRenderer.sprite = frontSprite;
+        {
+            // normal variant
+            if (spriteRenderer.sprite == frontSprite)
+                spriteRenderer.sprite = rightSprite;
+            else if (spriteRenderer.sprite == rightSprite)
+                spriteRenderer.sprite = backSprite;
+            else if (spriteRenderer.sprite == backSprite)
+                spriteRenderer.sprite = leftSprite;
+            else
+                spriteRenderer.sprite = frontSprite;
+        }
     }
 
-    internal void RotateToTheLeft()
+    public void RotateToTheLeft()
     {
-        // Controlla quale sprite è attualmente visualizzato e passa al successivo
-        if (spriteRenderer.sprite == frontSprite)
-            spriteRenderer.sprite = leftSprite;
-        else if (spriteRenderer.sprite == leftSprite)
-            spriteRenderer.sprite = backSprite;
-        else if (spriteRenderer.sprite == backSprite)
-            spriteRenderer.sprite = rightSprite;
+        if (!VariantManager.Instance.lightsOn)
+        {
+            // lights off variant
+        }
+        else if (isEndoActive)
+        {
+            // endoskeleton variant
+            if (spriteRenderer.sprite == frontEndoSprite)
+                spriteRenderer.sprite = leftEndoSprite;
+            else if (spriteRenderer.sprite == leftEndoSprite)
+                spriteRenderer.sprite = backEndoSprite;
+            else if (spriteRenderer.sprite == backEndoSprite)
+                spriteRenderer.sprite = rightEndoSprite;
+            else
+                spriteRenderer.sprite = frontEndoSprite;
+        }
         else
-            spriteRenderer.sprite = frontSprite;
+        {
+            // normal variant
+            if (spriteRenderer.sprite == frontSprite)
+                spriteRenderer.sprite = leftSprite;
+            else if (spriteRenderer.sprite == leftSprite)
+                spriteRenderer.sprite = backSprite;
+            else if (spriteRenderer.sprite == backSprite)
+                spriteRenderer.sprite = rightSprite;
+            else
+                spriteRenderer.sprite = frontSprite;
+        }
     }
 }
