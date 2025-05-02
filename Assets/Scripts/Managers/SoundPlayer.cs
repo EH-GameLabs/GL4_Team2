@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Singleton per chiamare clip dal nome file in qualsiasi momento con PlayClip
 public class SoundPlayer : MonoBehaviour
 {
+    public static SoundPlayer Instance { get; private set; }
+
     // global switch
     public bool muteSounds = false;
 
@@ -15,6 +18,18 @@ public class SoundPlayer : MonoBehaviour
     private float maxSoundLength = 5f;
 
     private float countDown;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {
@@ -35,7 +50,7 @@ public class SoundPlayer : MonoBehaviour
         countDown = soundTimer;
     }
 
-    public void PickAndPlayRandomSound()
+    private void PickAndPlayRandomSound()
     {
         countDown -= Time.deltaTime;
         if (countDown <= 0)
@@ -50,11 +65,17 @@ public class SoundPlayer : MonoBehaviour
         }
     }
 
-    public IEnumerator PlaySound(AudioClip sound, float seconds)
+    private IEnumerator PlaySound(AudioClip sound, float seconds)
     {
         // play sound for given timer
         audioPlayer.PlayOneShot(sound);
         yield return new WaitForSeconds(seconds);
         audioPlayer.Stop();
+    }
+
+    public void PlayClip(string file_path)
+    {
+        AudioClip clip = (AudioClip)Resources.Load(file_path);
+        audioPlayer.PlayOneShot(clip);
     }
 }
