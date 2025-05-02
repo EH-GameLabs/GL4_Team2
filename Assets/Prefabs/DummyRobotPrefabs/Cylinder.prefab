@@ -157,7 +157,7 @@ MonoBehaviour:
   leftSprite: {fileID: 21300000, guid: 1d34177d0ddc5cc41a4a6ebbec10297a, type: 3}
   rightSprite: {fileID: 21300000, guid: 48a93ca33de187b489eee23b66d4eb3e, type: 3}
   SO_Robot: {fileID: 11400000, guid: c043565e6bca2d542822aa07f772f419, type: 2}
-  isFaulty: 0
+  isFaulty: 1
   spriteRenderer: {fileID: 5727152193358002478}
 --- !u!212 &5727152193358002478
 SpriteRenderer:

@@ -101,15 +101,15 @@ public class LightingManager : MonoBehaviour
         while (i < seconds)
         {
             light.intensity = baseIntensity * (0.7f + 0.3f * Mathf.Sin(Mathf.PI / 2 + flickerSpeed * Time.time));
-            lightRenderer.material.color = Color.white * light.intensity / baseIntensity;
-            lightRenderer.material.SetColor(emissionPropertyID, Color.white * (light.intensity / baseIntensity - 0.25f));
+            //lightRenderer.material.color = Color.white * light.intensity / baseIntensity;
+            //lightRenderer.material.SetColor(emissionPropertyID, Color.white * (light.intensity / baseIntensity - 0.25f));
             i += Time.deltaTime;
             yield return new WaitForSeconds(Time.deltaTime);
         }
 
         // return to default values
         light.intensity = baseIntensity;
-        lightRenderer.material.color = Color.white * light.intensity / baseIntensity;
-        lightRenderer.material.SetColor(emissionPropertyID, Color.white);
+        //lightRenderer.material.color = Color.white * light.intensity / baseIntensity;
+        //lightRenderer.material.SetColor(emissionPropertyID, Color.white);
     }
 }
