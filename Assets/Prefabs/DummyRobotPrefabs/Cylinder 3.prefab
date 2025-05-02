@@ -114,10 +114,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2287484852338747260}
+  - component: {fileID: 6726069813957880710}
   - component: {fileID: 844976784347393389}
   - component: {fileID: 8905846752191673190}
   - component: {fileID: 6674830755642858697}
-  - component: {fileID: 6726069813957880710}
   m_Layer: 0
   m_Name: Cylinder 3
   m_TagString: Untagged
@@ -141,6 +141,25 @@ Transform:
   - {fileID: 5705274528837495943}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6726069813957880710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8723138825880292145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17fb75a7d9089f41962720449e1ca95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  leftSprite: {fileID: 0}
+  rightSprite: {fileID: 0}
+  SO_Robot: {fileID: 0}
+  isFaulty: 0
+  spriteRenderer: {fileID: 0}
 --- !u!33 &844976784347393389
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -214,15 +233,3 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &6726069813957880710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8723138825880292145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c17fb75a7d9089f41962720449e1ca95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
