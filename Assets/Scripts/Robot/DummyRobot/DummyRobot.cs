@@ -22,6 +22,7 @@ public class DummyRobot : MonoBehaviour
     [SerializeField] private SO_Robot SO_Robot;
     [SerializeField] public bool isFaulty;
     [SerializeField] public SpriteRenderer spriteRenderer;
+    [SerializeField] public string phrase;
 
     #region RANDOMIZED VARIABLES
     //// Variants variables --> TODO: REMOVE THIS AND USE SO_Robot

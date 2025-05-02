@@ -102,7 +102,7 @@ public class VariantManager : MonoBehaviour
     /// <summary>
     /// Control the mother code of the robot
     /// </summary>
-    public void ControlCode()
+    public void ControlCode(Sprite sprite)
     {
 
     }
