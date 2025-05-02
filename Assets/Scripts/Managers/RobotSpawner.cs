@@ -21,7 +21,6 @@ public class RobotSpawner : MonoBehaviour
     public bool robotIn = false;
     public bool robotOut = false;
 
-
     private void Awake()
     {
         if (Instance == null)
@@ -59,7 +58,7 @@ public class RobotSpawner : MonoBehaviour
             selectedRobots.Remove(currentRobot);
             currentRobot = Instantiate(currentRobot, spawnPoint);
         }
-        else if (DayManager.Instance.currentDayIndex < DayManager.Instance.days.Length)
+        else if (DayManager.Instance.currentDayIndex < DayManager.Instance.days.Length - 1)
         {
             // otherwise move to next dayif there still are
             Debug.Log("Day passed!");
@@ -70,6 +69,7 @@ public class RobotSpawner : MonoBehaviour
         else
         {
             // Win condition
+            UIManager.instance.ShowUI(UIManager.GameUI.Win);
             Debug.Log("Victory!");
         }
     }

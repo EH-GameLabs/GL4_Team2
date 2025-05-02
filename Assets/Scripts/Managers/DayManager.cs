@@ -46,7 +46,6 @@ public class DayManager : MonoBehaviour
 
     public void GoToNextDay()
     {
-        // Update Components
         currentDayIndex++;
         currentDay = days[currentDayIndex];
         lightingManager.UpdateDay(currentDay);
