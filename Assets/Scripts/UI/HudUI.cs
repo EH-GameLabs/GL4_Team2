@@ -12,4 +12,14 @@ public class HudUI : BaseUI
             UIManager.instance.ShowUI(UIManager.GameUI.Pause);
         }
     }
+
+    public void RotateToTheLeft()
+    {
+
+    }
+
+    public void RotateToTheRight()
+    {
+
+    }
 }
