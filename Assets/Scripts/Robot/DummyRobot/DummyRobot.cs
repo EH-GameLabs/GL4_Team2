@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -108,4 +109,16 @@ public class DummyRobot : MonoBehaviour
             spriteRenderer.sprite = frontSprite;
     }
 
+    internal void RotateToTheLeft()
+    {
+        // Controlla quale sprite è attualmente visualizzato e passa al successivo
+        if (spriteRenderer.sprite == frontSprite)
+            spriteRenderer.sprite = leftSprite;
+        else if (spriteRenderer.sprite == leftSprite)
+            spriteRenderer.sprite = backSprite;
+        else if (spriteRenderer.sprite == backSprite)
+            spriteRenderer.sprite = rightSprite;
+        else
+            spriteRenderer.sprite = frontSprite;
+    }
 }
