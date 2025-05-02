@@ -22,4 +22,9 @@ public class HudUI : BaseUI
     {
         FindAnyObjectByType<DummyRobot>().RotateToTheRight();
     }
+
+    public void ControlEndoskeleton()
+    {
+        VariantManager.Instance.ControlEndoskeleton();
+    }
 }

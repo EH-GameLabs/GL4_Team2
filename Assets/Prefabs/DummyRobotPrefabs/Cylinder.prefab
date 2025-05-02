@@ -156,6 +156,11 @@ MonoBehaviour:
   backSprite: {fileID: 21300000, guid: 57bf35b7dc3ff924da6c3a9e6f624b46, type: 3}
   leftSprite: {fileID: 21300000, guid: 1d34177d0ddc5cc41a4a6ebbec10297a, type: 3}
   rightSprite: {fileID: 21300000, guid: 48a93ca33de187b489eee23b66d4eb3e, type: 3}
+  isEndoActive: 0
+  frontEndoSprite: {fileID: 21300000, guid: 075e2e68929f42c4e9be97e0fcc8c6db, type: 3}
+  backEndoSprite: {fileID: 21300000, guid: ba2e90cb2dbd02a4394d51b4ead9a00c, type: 3}
+  leftEndoSprite: {fileID: 21300000, guid: 4ee3afa45f657894eabe23041d1a1e36, type: 3}
+  rightEndoSprite: {fileID: 21300000, guid: 38a38f8d429f87a4e9bf255b1c4c8b62, type: 3}
   SO_Robot: {fileID: 11400000, guid: c043565e6bca2d542822aa07f772f419, type: 2}
   isFaulty: 1
   spriteRenderer: {fileID: 5727152193358002478}
