@@ -62,6 +62,8 @@ public class RobotSpawner : MonoBehaviour
         {
             // otherwise move to next dayif there still are
             Debug.Log("Day passed!");
+            // TODO add UI for day passing
+
             DayManager.Instance.GoToNextDay();
             GameManager.Instance.dayReached += 1;
             //GameManager.Instance.SaveDay(); // TODO uncomment for build, this saves the day reached by player

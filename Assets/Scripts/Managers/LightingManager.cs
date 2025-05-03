@@ -29,7 +29,7 @@ public class LightingManager : MonoBehaviour
     private void Start()
     {
         // Get light components in scene
-        inGameLights = FindObjectsOfType<Light>();
+        inGameLights = GetComponentsInChildren<Light>();
 
         // save initial values for lights
         baseIntensities = new float[inGameLights.Length];

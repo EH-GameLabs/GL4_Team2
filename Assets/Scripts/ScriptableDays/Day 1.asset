@@ -35,6 +35,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cf466331ca9bade44b2a2eb6fb5dcdbe, type: 3}
   - {fileID: 8300000, guid: 8093beefe014a3841ac19ce86f6e5494, type: 3}
   soundTimer: 5
-  soundProbability: 50
+  soundProbability: 0
   lightFlickerTimer: 1
-  lightFlickerProbability: 50
+  lightFlickerProbability: 0
+  dialogue: Test dialogue
+  dialogueDuration: 5

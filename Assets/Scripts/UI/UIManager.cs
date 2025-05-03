@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ public class UIManager : MonoBehaviour
         NONE,
         MainMenu,
         HUD,
+        Dialogue,
         Pause,
         Win,
         Lose,
@@ -22,6 +24,7 @@ public class UIManager : MonoBehaviour
     public Transform UIContainer;
     private GameUI currentActiveUI = GameUI.NONE;
     public GameUI startingGameUI;
+    public GameObject dialoguePanel;
 
     public void RegisterUI(GameUI uiType, IGameUI uiToRegister)
     {
@@ -54,5 +57,14 @@ public class UIManager : MonoBehaviour
     public GameUI GetCurrentActiveUI()
     {
         return currentActiveUI;
+    }
+
+    // Prints text to the dialogue panel for a given duration
+    public void PrintDialogue(string _text, float _duration)
+    {
+        TextMeshProUGUI dialogueBox = dialoguePanel.GetComponentInChildren<TextMeshProUGUI>();
+        dialogueBox.text = _text;
+        dialoguePanel.SetActive(true);
+        dialoguePanel.GetComponent<DialogueUI>().SetTime(_duration);
     }
 }

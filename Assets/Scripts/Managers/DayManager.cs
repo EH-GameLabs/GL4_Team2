@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System;
+using System.Runtime.CompilerServices;
 
 // Singleton
 
@@ -31,7 +32,10 @@ public class DayManager : MonoBehaviour
         {
             Destroy(Instance.gameObject);
         }
+    }
 
+    private void Start()
+    {
         // Reference and initialize components
         currentDayIndex = 0;
         currentDay = days[currentDayIndex];
@@ -44,6 +48,11 @@ public class DayManager : MonoBehaviour
         robotSpawner.LoadRobots(SelectCurrentDayRobots());
     }
 
+    public void Init()
+    {
+        UIManager.instance.PrintDialogue(currentDay.dialogue, currentDay.dialogueDuration);
+    }
+
     public void GoToNextDay()
     {
         currentDayIndex++;
@@ -51,6 +60,7 @@ public class DayManager : MonoBehaviour
         lightingManager.UpdateDay(currentDay);
         soundPlayer.UpdateDay(currentDay);
         robotSpawner.LoadRobots(SelectCurrentDayRobots());
+        UIManager.instance.PrintDialogue(currentDay.dialogue, currentDay.dialogueDuration);
     }
 
     // Randomly select the robots in this day from SO list

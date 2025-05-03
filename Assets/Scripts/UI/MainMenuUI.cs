@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class MainMenuUI : BaseUI
 {
+    private void Awake()
+    {
+        Time.timeScale = 0f;
+    }
+
     public void GoToHud()
     {
+        Time.timeScale = 1f;
         UIManager.instance.ShowUI(UIManager.GameUI.HUD);
+        DayManager.Instance.Init();
     }
 
     public void GoToOptions()

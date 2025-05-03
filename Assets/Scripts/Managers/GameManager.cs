@@ -28,9 +28,15 @@ public class GameManager : MonoBehaviour
 
 
     // Triggers game over screen in UI
-    public void GameOver()
+    public void GameOverFired()
     {
         UIManager.instance.ShowUI(UIManager.GameUI.Lose);
+    }
+    
+    // Triggers second game over screen in UI
+    public void GameOverDead()
+    {
+        UIManager.instance.ShowUI(UIManager.GameUI.Lose); // Change to second lose UI
     }
 
     // Resets the scene after a game over

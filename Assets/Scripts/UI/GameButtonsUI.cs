@@ -27,9 +27,13 @@ public class UIGameButtons : MonoBehaviour
     public IEnumerator Decide(bool isFaulty, bool approved)
     {
         yield return new WaitForSeconds(decisionTimer);
-        if ((isFaulty && approved) || (!isFaulty && !approved))
+        if (isFaulty && approved)
         {
-            GameManager.Instance.GameOver();
+            GameManager.Instance.GameOverDead();
+        }
+        else if (!isFaulty && !approved)
+        {
+            GameManager.Instance.GameOverFired();
         }
         else
         {

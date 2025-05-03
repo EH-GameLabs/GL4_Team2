@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ac026ac05d2eba42828b8262e29d7be, type: 3}
-  m_Name: Day 2
+  m_Name: Day 3
   m_EditorClassIdentifier: 
   robots:
   - {fileID: 8723138825880292145, guid: 82a49abf284c65a48bde119c8ca964f9, type: 3}
@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 8723138825880292145, guid: c2f69934cb198b142a6092cc6cc7e8e7, type: 3}
   - {fileID: 8723138825880292145, guid: 8da96360f960a02489461a81b966bc2c, type: 3}
   - {fileID: 8723138825880292145, guid: ea9b4ca81fc1dc342a6919002f789c04, type: 3}
-  robotNumber: 3
+  robotNumber: 5
   scaryEffects:
   - {fileID: 8300000, guid: 9bf66505f55d3d245a8964d7cbf726d2, type: 3}
   - {fileID: 8300000, guid: 8b8ae6ef5cf486142a3e0a02291f48c4, type: 3}
@@ -35,8 +35,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cf466331ca9bade44b2a2eb6fb5dcdbe, type: 3}
   - {fileID: 8300000, guid: 8093beefe014a3841ac19ce86f6e5494, type: 3}
   soundTimer: 5
-  soundProbability: 20
-  lightFlickerTimer: 0.3
-  lightFlickerProbability: 10
-  dialogue: Test dialogue 2
+  soundProbability: 50
+  lightFlickerTimer: 1
+  lightFlickerProbability: 50
+  dialogue: Test dialogue 3
   dialogueDuration: 5

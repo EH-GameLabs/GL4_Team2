@@ -20,4 +20,8 @@ public class SO_Day : ScriptableObject
     public float lightFlickerTimer;
     [Tooltip("The probability of a random light flickering every lightFlickerTimer seconds")]
     [Range(0,100)] public float lightFlickerProbability;
+    [Tooltip("The dialogue to show at the start of the day")]
+    public string dialogue;
+    [Tooltip("How long the dialogue lasts on screen in seconds")]
+    public float dialogueDuration;
 }
