@@ -48,16 +48,47 @@ public class VariantManager : MonoBehaviour
 
     public void ControlLighting()
     {
+        DummyRobot dummyRobot = FindAnyObjectByType<DummyRobot>();
         if (lightsOn)
         {
             LightingManager.Instance.TurnOffAllLights();
             lightsOn = false;
+            DisableLightingSprite(dummyRobot);
         }
         else
         {
             LightingManager.Instance.TurnOnAllLights();
             lightsOn = true;
+            EnableLightingSprite(dummyRobot);
         }
+    }
+
+    private void DisableLightingSprite(DummyRobot dummyRobot)
+    {
+        if (dummyRobot.spriteRenderer.sprite == dummyRobot.frontEndoSprite ||
+            dummyRobot.spriteRenderer.sprite == dummyRobot.frontSprite)
+            dummyRobot.spriteRenderer.sprite = dummyRobot.frontSpriteOff;
+        else if (dummyRobot.spriteRenderer.sprite == dummyRobot.backEndoSprite ||
+                 dummyRobot.spriteRenderer.sprite == dummyRobot.backSprite)
+            dummyRobot.spriteRenderer.sprite = dummyRobot.backSpriteOff;
+        else if (dummyRobot.spriteRenderer.sprite == dummyRobot.leftEndoSprite ||
+                 dummyRobot.spriteRenderer.sprite == dummyRobot.leftSprite)
+            dummyRobot.spriteRenderer.sprite = dummyRobot.leftSpriteOff;
+        else if (dummyRobot.spriteRenderer.sprite == dummyRobot.rightEndoSprite ||
+                 dummyRobot.spriteRenderer.sprite == dummyRobot.rightSprite)
+            dummyRobot.spriteRenderer.sprite = dummyRobot.rightSpriteOff;
+    }
+
+    private void EnableLightingSprite(DummyRobot dummyRobot)
+    {
+        if (dummyRobot.spriteRenderer.sprite == dummyRobot.frontSpriteOff)
+            dummyRobot.spriteRenderer.sprite = dummyRobot.isEndoActive ? dummyRobot.frontEndoSprite : dummyRobot.frontSprite;
+        else if (dummyRobot.spriteRenderer.sprite == dummyRobot.backSpriteOff)
+            dummyRobot.spriteRenderer.sprite = dummyRobot.isEndoActive ? dummyRobot.backEndoSprite : dummyRobot.backSprite;
+        else if (dummyRobot.spriteRenderer.sprite == dummyRobot.leftSpriteOff)
+            dummyRobot.spriteRenderer.sprite = dummyRobot.isEndoActive ? dummyRobot.leftEndoSprite : dummyRobot.leftSprite;
+        else if (dummyRobot.spriteRenderer.sprite == dummyRobot.rightSpriteOff)
+            dummyRobot.spriteRenderer.sprite = dummyRobot.isEndoActive ? dummyRobot.rightEndoSprite : dummyRobot.rightSprite;
     }
 
     public void ControlEndoskeleton()
@@ -65,12 +96,14 @@ public class VariantManager : MonoBehaviour
         DummyRobot dummyRobot = FindAnyObjectByType<DummyRobot>();
         if (dummyRobot.isEndoActive)
         {
-            DisableEndoSkeleton(dummyRobot);
+            if (lightsOn)
+                DisableEndoSkeleton(dummyRobot);
             dummyRobot.isEndoActive = false;
         }
         else
         {
-            EnableEndoSkeleton(dummyRobot);
+            if (lightsOn)
+                EnableEndoSkeleton(dummyRobot);
             dummyRobot.isEndoActive = true;
         }
     }

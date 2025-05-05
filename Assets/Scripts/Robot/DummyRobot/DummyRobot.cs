@@ -18,6 +18,12 @@ public class DummyRobot : MonoBehaviour
     [SerializeField] public Sprite leftEndoSprite;
     [SerializeField] public Sprite rightEndoSprite;
 
+    [Header("LightsOff Sprites")]
+    [SerializeField] public Sprite frontSpriteOff;
+    [SerializeField] public Sprite backSpriteOff;
+    [SerializeField] public Sprite leftSpriteOff;
+    [SerializeField] public Sprite rightSpriteOff;
+
     [Header("Robot Data")]
     [SerializeField] private SO_Robot SO_Robot;
     [SerializeField] public bool isFaulty;
