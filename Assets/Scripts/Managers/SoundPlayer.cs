@@ -77,7 +77,8 @@ public class SoundPlayer : MonoBehaviour
     {
         if (audioPlayer.isPlaying) return;
 
-        AudioClip clip = (AudioClip)Resources.Load(file_path);
+        AudioClip clip = Resources.Load(file_path) as AudioClip;
+
         audioPlayer.PlayOneShot(clip);
     }
 }

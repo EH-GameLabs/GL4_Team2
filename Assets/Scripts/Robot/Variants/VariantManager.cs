@@ -18,7 +18,7 @@ public class VariantManager : MonoBehaviour
     public V_Endoskeleton V_Endoskeleton;
 
     // AUDIO
-    private const string PATH = "Assets\\Sounds\\Frasi Vocali Robot\\";
+    private const string PATH = "Frasi Vocali Robot/";
     public const string badPhrase1 = "Frase_Brutta_1";
     public const string badPhrase2 = "Frase_Brutta_2";
     public const string badPhrase3 = "Frase_Brutta_3";
@@ -40,9 +40,33 @@ public class VariantManager : MonoBehaviour
     /// Play audio clip from the path
     /// </summary>
     /// <param name="phrase"></param>
-    public void ControlAudio(string phrase)
+    public void ControlAudio(PhraseType phrase)
     {
-        SoundPlayer.Instance.PlayClip(PATH + phrase);
+        string filePath = string.Empty;
+
+        switch (phrase)
+        {
+            case PhraseType.GoodPhrase1:
+                filePath = PATH + goodPhrase1;
+                break;
+            case PhraseType.GoodPhrase2:
+                filePath = PATH + goodPhrase2;
+                break;
+            case PhraseType.GoodPhrase3:
+                filePath = PATH + goodPhrase3;
+                break;
+            case PhraseType.BadPhrase1:
+                filePath = PATH + badPhrase1;
+                break;
+            case PhraseType.BadPhrase2:
+                filePath = PATH + badPhrase2;
+                break;
+            case PhraseType.BadPhrase3:
+                filePath = PATH + badPhrase3;
+                break;
+        }
+
+        SoundPlayer.Instance.PlayClip(filePath);
     }
 
 
