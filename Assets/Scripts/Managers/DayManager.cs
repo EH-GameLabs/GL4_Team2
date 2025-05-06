@@ -15,9 +15,9 @@ public class DayManager : MonoBehaviour
     // List of all the data of ingame days
     [SerializeField] public SO_Day[] days;
     public int currentDayIndex;
+    public SO_Day currentDay;
 
     // internals
-    private SO_Day currentDay;
     private LightingManager lightingManager;
     private SoundPlayer soundPlayer;
     private RobotSpawner robotSpawner;
@@ -50,7 +50,7 @@ public class DayManager : MonoBehaviour
 
     public void Init()
     {
-        UIManager.instance.PrintDialogue(currentDay.dialogue, currentDay.dialogueDuration);
+        //UIManager.instance.PrintDialogue(currentDay.dialogue, currentDay.dialogueDuration);
     }
 
     public void GoToNextDay()
@@ -60,7 +60,8 @@ public class DayManager : MonoBehaviour
         lightingManager.UpdateDay(currentDay);
         soundPlayer.UpdateDay(currentDay);
         robotSpawner.LoadRobots(SelectCurrentDayRobots());
-        UIManager.instance.PrintDialogue(currentDay.dialogue, currentDay.dialogueDuration);
+        UIManager.instance.FadeTransition();
+        //UIManager.instance.PrintDialogue(currentDay.dialogue, currentDay.dialogueDuration);
     }
 
     // Randomly select the robots in this day from SO list

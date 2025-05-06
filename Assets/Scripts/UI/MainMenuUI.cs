@@ -12,6 +12,7 @@ public class MainMenuUI : BaseUI
     public void GoToHud()
     {
         Time.timeScale = 1f;
+        UIManager.instance.FadeOut();
         UIManager.instance.ShowUI(UIManager.GameUI.HUD);
         DayManager.Instance.Init();
     }

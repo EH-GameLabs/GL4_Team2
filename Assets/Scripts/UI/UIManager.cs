@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
     private GameUI currentActiveUI = GameUI.NONE;
     public GameUI startingGameUI;
     public GameObject dialoguePanel;
+    public GameObject fader;
 
     public void RegisterUI(GameUI uiType, IGameUI uiToRegister)
     {
@@ -66,5 +67,22 @@ public class UIManager : MonoBehaviour
         dialogueBox.text = _text;
         dialoguePanel.SetActive(true);
         dialoguePanel.GetComponent<DialogueUI>().SetTime(_duration);
+    }
+
+    public void FadeTransition()
+    {
+        fader.gameObject.SetActive(true);
+    }
+
+    public void FadeIn()
+    {
+        fader.gameObject.SetActive(true);
+        fader.GetComponent<BlackFade>().FadeIn();
+    }
+
+    public void FadeOut()
+    {
+        fader.gameObject.SetActive(true);
+        fader.GetComponent<BlackFade>().FadeOut();
     }
 }
