@@ -67,16 +67,24 @@ public class VariantManager : MonoBehaviour
     {
         if (dummyRobot.spriteRenderer.sprite == dummyRobot.frontEndoSprite ||
             dummyRobot.spriteRenderer.sprite == dummyRobot.frontSprite)
+        {
             dummyRobot.spriteRenderer.sprite = dummyRobot.frontSpriteOff;
+        }
         else if (dummyRobot.spriteRenderer.sprite == dummyRobot.backEndoSprite ||
                  dummyRobot.spriteRenderer.sprite == dummyRobot.backSprite)
+        {
             dummyRobot.spriteRenderer.sprite = dummyRobot.backSpriteOff;
+        }
         else if (dummyRobot.spriteRenderer.sprite == dummyRobot.leftEndoSprite ||
                  dummyRobot.spriteRenderer.sprite == dummyRobot.leftSprite)
+        {
             dummyRobot.spriteRenderer.sprite = dummyRobot.leftSpriteOff;
+        }
         else if (dummyRobot.spriteRenderer.sprite == dummyRobot.rightEndoSprite ||
                  dummyRobot.spriteRenderer.sprite == dummyRobot.rightSprite)
+        {
             dummyRobot.spriteRenderer.sprite = dummyRobot.rightSpriteOff;
+        }
     }
 
     private void EnableLightingSprite(DummyRobot dummyRobot)
@@ -94,6 +102,7 @@ public class VariantManager : MonoBehaviour
     public void ControlEndoskeleton()
     {
         DummyRobot dummyRobot = FindAnyObjectByType<DummyRobot>();
+
         if (dummyRobot.isEndoActive)
         {
             if (lightsOn)
@@ -132,12 +141,33 @@ public class VariantManager : MonoBehaviour
             dummyRobot.spriteRenderer.sprite = dummyRobot.rightEndoSprite;
     }
 
-    /// <summary>
-    /// Control the mother code of the robot
-    /// </summary>
-    public void ControlCode(Sprite sprite)
+    internal void ControlMotherCode()
     {
+        DummyRobot dummyRobot = FindAnyObjectByType<DummyRobot>();
 
+        SetFrontSpriteActive(dummyRobot);
+
+        dummyRobot.isMotherCodeActive = !dummyRobot.isMotherCodeActive;
+        dummyRobot.motherCode.SetActive(dummyRobot.isMotherCodeActive);
+
+        // zoom in camera
+        if (dummyRobot.isMotherCodeActive)
+        {
+            CameraManager.Instance.ZoomInCamera();
+        }
+        else
+        {
+            CameraManager.Instance.ZoomOutCamera();
+        }
     }
 
+    private void SetFrontSpriteActive(DummyRobot dummyRobot)
+    {
+        if (!lightsOn)
+            dummyRobot.spriteRenderer.sprite = dummyRobot.frontSpriteOff;
+        else if (dummyRobot.isEndoActive)
+            dummyRobot.spriteRenderer.sprite = dummyRobot.frontEndoSprite;
+        else
+            dummyRobot.spriteRenderer.sprite = dummyRobot.frontSprite;
+    }
 }

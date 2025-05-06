@@ -5,31 +5,87 @@ using UnityEngine;
 
 public class DummyRobot : MonoBehaviour
 {
+    [Header("Robot Data")]
+    [SerializeField] private SO_Robot SO_Robot;
+    public bool isFaulty;
+    public SpriteRenderer spriteRenderer;
+    public string phrase;
+
+    [Space(15)]
     [Header("Sprites")]
-    [SerializeField] public Sprite frontSprite;
-    [SerializeField] public Sprite backSprite;
-    [SerializeField] public Sprite leftSprite;
-    [SerializeField] public Sprite rightSprite;
+    public Sprite frontSprite;
+    public Sprite backSprite;
+    public Sprite leftSprite;
+    public Sprite rightSprite;
 
     [Header("Endoskeleton Sprites")]
     public bool isEndoActive = false;
-    [SerializeField] public Sprite frontEndoSprite;
-    [SerializeField] public Sprite backEndoSprite;
-    [SerializeField] public Sprite leftEndoSprite;
-    [SerializeField] public Sprite rightEndoSprite;
+    public Sprite frontEndoSprite;
+    public Sprite backEndoSprite;
+    public Sprite leftEndoSprite;
+    public Sprite rightEndoSprite;
 
     [Header("LightsOff Sprites")]
-    [SerializeField] public Sprite frontSpriteOff;
-    [SerializeField] public Sprite backSpriteOff;
-    [SerializeField] public Sprite leftSpriteOff;
-    [SerializeField] public Sprite rightSpriteOff;
+    public Sprite frontSpriteOff;
+    public Sprite backSpriteOff;
+    public Sprite leftSpriteOff;
+    public Sprite rightSpriteOff;
 
-    [Header("Robot Data")]
-    [SerializeField] private SO_Robot SO_Robot;
-    [SerializeField] public bool isFaulty;
-    [SerializeField] public SpriteRenderer spriteRenderer;
-    [SerializeField] public string phrase;
+    [Header("MotherCode")]
+    public bool isMotherCodeActive;
+    public GameObject motherCode;
 
+    private void Start()
+    {
+        isMotherCodeActive = false;
+        motherCode.GetComponent<SpriteRenderer>().sortingOrder = 1;
+        motherCode.SetActive(false);
+    }
+
+    public void RotateToTheRight() => Rotate(+1);
+    public void RotateToTheLeft() => Rotate(-1);
+
+    private void Rotate(int direction)
+    {
+        // Salvo lo stato iniziale di motherCode e lo disattivo sempre
+        bool wasMotherActive = isMotherCodeActive;
+        motherCode.SetActive(false);
+
+        // Prendo la lista di sprite corretta
+        Sprite[] sprites = GetCurrentSpriteArray();
+
+        // Trovo l'indice corrente e calcolo quello successivo
+        int currentIndex = Array.IndexOf(sprites, spriteRenderer.sprite);
+        // se non trovato, parto da 0
+        if (currentIndex < 0) currentIndex = 0;
+
+        int nextIndex = (currentIndex + direction + sprites.Length) % sprites.Length;
+        spriteRenderer.sprite = sprites[nextIndex];
+
+        // Se torni al fronte (indice 0) e la mother era attiva, la riattivo
+        if (nextIndex == 0 && wasMotherActive)
+        {
+            motherCode.SetActive(true);
+        }
+    }
+
+    private Sprite[] GetCurrentSpriteArray()
+    {
+        if (!VariantManager.Instance.lightsOn)
+        {
+            return new[] { frontSpriteOff, rightSpriteOff, backSpriteOff, leftSpriteOff };
+        }
+        else if (isEndoActive)
+        {
+            return new[] { frontEndoSprite, rightEndoSprite, backEndoSprite, leftEndoSprite };
+        }
+        else
+        {
+            return new[] { frontSprite, rightSprite, backSprite, leftSprite };
+        }
+    }
+
+    // TODO: REMOVE THIS IF NOT NEEDED
     #region RANDOMIZED VARIABLES
     //// Variants variables --> TODO: REMOVE THIS AND USE SO_Robot
     //[HideInInspector] public string serialCode;
@@ -109,68 +165,4 @@ public class DummyRobot : MonoBehaviour
     //public EndoskeletonType GetEndoskeletonType() { return endoskeleton; }
     //#endregion
     #endregion  
-
-    public void RotateToTheRight()
-    {
-        if (!VariantManager.Instance.lightsOn)
-        {
-            // lights off variant
-        }
-        else if (isEndoActive)
-        {
-            // endoskeleton variant
-            if (spriteRenderer.sprite == frontEndoSprite)
-                spriteRenderer.sprite = rightEndoSprite;
-            else if (spriteRenderer.sprite == rightEndoSprite)
-                spriteRenderer.sprite = backEndoSprite;
-            else if (spriteRenderer.sprite == backEndoSprite)
-                spriteRenderer.sprite = leftEndoSprite;
-            else
-                spriteRenderer.sprite = frontEndoSprite;
-        }
-        else
-        {
-            // normal variant
-            if (spriteRenderer.sprite == frontSprite)
-                spriteRenderer.sprite = rightSprite;
-            else if (spriteRenderer.sprite == rightSprite)
-                spriteRenderer.sprite = backSprite;
-            else if (spriteRenderer.sprite == backSprite)
-                spriteRenderer.sprite = leftSprite;
-            else
-                spriteRenderer.sprite = frontSprite;
-        }
-    }
-
-    public void RotateToTheLeft()
-    {
-        if (!VariantManager.Instance.lightsOn)
-        {
-            // lights off variant
-        }
-        else if (isEndoActive)
-        {
-            // endoskeleton variant
-            if (spriteRenderer.sprite == frontEndoSprite)
-                spriteRenderer.sprite = leftEndoSprite;
-            else if (spriteRenderer.sprite == leftEndoSprite)
-                spriteRenderer.sprite = backEndoSprite;
-            else if (spriteRenderer.sprite == backEndoSprite)
-                spriteRenderer.sprite = rightEndoSprite;
-            else
-                spriteRenderer.sprite = frontEndoSprite;
-        }
-        else
-        {
-            // normal variant
-            if (spriteRenderer.sprite == frontSprite)
-                spriteRenderer.sprite = leftSprite;
-            else if (spriteRenderer.sprite == leftSprite)
-                spriteRenderer.sprite = backSprite;
-            else if (spriteRenderer.sprite == backSprite)
-                spriteRenderer.sprite = rightSprite;
-            else
-                spriteRenderer.sprite = frontSprite;
-        }
-    }
 }
