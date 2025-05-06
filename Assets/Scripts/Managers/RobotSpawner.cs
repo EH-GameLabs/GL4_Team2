@@ -35,7 +35,7 @@ public class RobotSpawner : MonoBehaviour
 
     private void Start()
     {
-        robotIn = true;
+        //robotIn = true;
     }
 
     // takes robots selected in day Manager and spawns them in order
@@ -45,7 +45,7 @@ public class RobotSpawner : MonoBehaviour
         // convert array into list to make it easier to process
         selectedRobots = robots.Cast<GameObject>().ToList();
 
-        // pop first element from list an spawn
+        // pop first element from list and spawn
         SpawnNextRobot();
     }
 
@@ -57,6 +57,8 @@ public class RobotSpawner : MonoBehaviour
             currentRobot = selectedRobots.First();
             selectedRobots.Remove(currentRobot);
             currentRobot = Instantiate(currentRobot, spawnPoint);
+            robotIn = true;
+            robotOut = false;
         }
         else if (DayManager.Instance.currentDayIndex < DayManager.Instance.days.Length - 1)
         {
@@ -66,7 +68,9 @@ public class RobotSpawner : MonoBehaviour
 
             DayManager.Instance.GoToNextDay();
             GameManager.Instance.dayReached += 1;
-            //GameManager.Instance.SaveDay(); // TODO uncomment for build, this saves the day reached by player
+            GameManager.Instance.SaveDay(); //this saves the day reached by player
+            robotIn = true;
+            robotOut = false;
         }
         else
         {

@@ -48,9 +48,13 @@ public class DayManager : MonoBehaviour
         robotSpawner.LoadRobots(SelectCurrentDayRobots());
     }
 
-    public void Init()
+    public void ChangeDay(int dayIndex)
     {
-        //UIManager.instance.PrintDialogue(currentDay.dialogue, currentDay.dialogueDuration);
+        currentDayIndex = dayIndex;
+        currentDay = days[currentDayIndex];
+        lightingManager.UpdateDay(currentDay);
+        soundPlayer.UpdateDay(currentDay);
+        robotSpawner.LoadRobots(SelectCurrentDayRobots());
     }
 
     public void GoToNextDay()
@@ -61,7 +65,6 @@ public class DayManager : MonoBehaviour
         soundPlayer.UpdateDay(currentDay);
         robotSpawner.LoadRobots(SelectCurrentDayRobots());
         UIManager.instance.FadeTransition();
-        //UIManager.instance.PrintDialogue(currentDay.dialogue, currentDay.dialogueDuration);
     }
 
     // Randomly select the robots in this day from SO list
