@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 // Singleton
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance {  get; private set; }
+    public static GameManager Instance { get; private set; }
 
     public int dayReached;
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
         }
 
         // load player prefs
-        dayReached = PlayerPrefs.GetInt("DayReached");
+        LoadDay();
     }
 
 
@@ -32,11 +32,11 @@ public class GameManager : MonoBehaviour
     {
         UIManager.instance.ShowUI(UIManager.GameUI.Lose);
     }
-    
+
     // Triggers second game over screen in UI
     public void GameOverDead()
     {
-        UIManager.instance.ShowUI(UIManager.GameUI.Lose); // Change to second lose UI
+        UIManager.instance.ShowUI(UIManager.GameUI.Lose); // TODO Change to second lose UI
     }
 
     // Resets the scene after a game over
@@ -49,6 +49,17 @@ public class GameManager : MonoBehaviour
     public void SaveDay()
     {
         PlayerPrefs.SetInt("DayReached", dayReached);
+    }
+
+    public void LoadDay()
+    {
+        dayReached = PlayerPrefs.GetInt("DayReached");
+    }
+
+    public void ResetDays()
+    {
+        PlayerPrefs.SetInt("DayReached", 0);
+        LoadDay();
     }
 
 

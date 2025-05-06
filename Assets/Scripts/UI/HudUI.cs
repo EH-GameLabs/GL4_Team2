@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HudUI : BaseUI
 {
@@ -8,7 +9,7 @@ public class HudUI : BaseUI
 
     public void RobotApproved()
     {
-        if (RobotSpawner.Instance.robotIn) return;
+        if (RobotSpawner.Instance.robotIn || RobotSpawner.Instance.robotOut) return;
         RobotSpawner.Instance.robotOut = true;
         bool approved = true;
         bool isFaulty = RobotSpawner.Instance.currentRobot.GetComponent<DummyRobot>().isFaulty;
@@ -17,7 +18,7 @@ public class HudUI : BaseUI
 
     public void RobotRejected()
     {
-        if (RobotSpawner.Instance.robotIn) return;
+        if (RobotSpawner.Instance.robotIn || RobotSpawner.Instance.robotOut) return;
         RobotSpawner.Instance.robotOut = true;
         bool approved = false;
         bool isFaulty = RobotSpawner.Instance.currentRobot.GetComponent<DummyRobot>().isFaulty;
@@ -38,7 +39,7 @@ public class HudUI : BaseUI
         else
         {
             RobotSpawner.Instance.SpawnNextRobot();
-            RobotSpawner.Instance.robotIn = true;
+            //RobotSpawner.Instance.robotIn = true;
         }
     }
 
