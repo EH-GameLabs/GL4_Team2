@@ -240,7 +240,7 @@ MonoBehaviour:
   SO_Robot: {fileID: 11400000, guid: c043565e6bca2d542822aa07f772f419, type: 2}
   isFaulty: 1
   spriteRenderer: {fileID: 5727152193358002478}
-  phrase: 
+  phrase: 1
   frontSprite: {fileID: 21300000, guid: ad119f31d23b5bb4ea1145b87b2c1b3f, type: 3}
   backSprite: {fileID: 21300000, guid: 57bf35b7dc3ff924da6c3a9e6f624b46, type: 3}
   leftSprite: {fileID: 21300000, guid: 1d34177d0ddc5cc41a4a6ebbec10297a, type: 3}
@@ -254,6 +254,7 @@ MonoBehaviour:
   backSpriteOff: {fileID: 21300000, guid: ab9f68a13bd41f745a2236ed02ec2bdf, type: 3}
   leftSpriteOff: {fileID: 21300000, guid: 725a2959f17eb3642bfb2607a3b4cc22, type: 3}
   rightSpriteOff: {fileID: 21300000, guid: 0e1807fd6b7fd03429d50552888e9983, type: 3}
+  isMotherCodeActive: 0
   motherCode: {fileID: 376684273137637053}
 --- !u!212 &5727152193358002478
 SpriteRenderer:

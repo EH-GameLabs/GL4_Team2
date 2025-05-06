@@ -33,4 +33,10 @@ public enum EndoskeletonType
     Broken,
     Missing,
 }
+
+public enum PhraseType
+{
+    GoodPhrase1, GoodPhrase2, GoodPhrase3,
+    BadPhrase1, BadPhrase2, BadPhrase3,
+}
 #endregion

@@ -9,7 +9,7 @@ public class DummyRobot : MonoBehaviour
     [SerializeField] private SO_Robot SO_Robot;
     public bool isFaulty;
     public SpriteRenderer spriteRenderer;
-    public string phrase;
+    public PhraseType phrase;
 
     [Space(15)]
     [Header("Sprites")]

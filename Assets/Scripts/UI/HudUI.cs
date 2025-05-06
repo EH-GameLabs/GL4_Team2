@@ -62,7 +62,7 @@ public class HudUI : BaseUI
 
     public void ControlAudio()
     {
-        string phrase = FindAnyObjectByType<DummyRobot>().phrase;
+        PhraseType phrase = FindAnyObjectByType<DummyRobot>().phrase;
         VariantManager.Instance.ControlAudio(phrase);
     }
 
