@@ -62,18 +62,37 @@ public class HudUI : BaseUI
 
     public void ControlAudio()
     {
-        PhraseType phrase = FindAnyObjectByType<DummyRobot>().phrase;
-        VariantManager.Instance.ControlAudio(phrase);
+        DummyRobot dummyRobot = FindAnyObjectByType<DummyRobot>();
+        VariantManager.Instance.ControlAudio(dummyRobot.phrase);
+
+        if (dummyRobot.jumpScareType == JumpScareType.Audio)
+        {
+            JumpScareManager.Instance.PlayAudioJumpScare();
+        }
     }
 
     public void ControlLighting()
     {
+        DummyRobot dummyRobot = FindAnyObjectByType<DummyRobot>();
+
+        if (dummyRobot.jumpScareType == JumpScareType.LigthingControl)
+        {
+            JumpScareManager.Instance.PlayLightingControlJumpScare(dummyRobot);
+        }
+
         VariantManager.Instance.ControlLighting();
     }
 
     public void ControlEndoskeleton()
     {
+        DummyRobot dummyRobot = FindAnyObjectByType<DummyRobot>();
+
         VariantManager.Instance.ControlEndoskeleton();
+
+        if (dummyRobot.jumpScareType == JumpScareType.Endoskeleton)
+        {
+            JumpScareManager.Instance.PlayEndoskeletonJumpScare(dummyRobot);
+        }
     }
 
     public void ControlMotherCode()

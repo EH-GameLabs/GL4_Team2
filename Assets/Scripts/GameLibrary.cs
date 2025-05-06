@@ -39,4 +39,14 @@ public enum PhraseType
     GoodPhrase1, GoodPhrase2, GoodPhrase3,
     BadPhrase1, BadPhrase2, BadPhrase3,
 }
+
+public enum JumpScareType
+{
+    None,
+    Audio,
+    Endoskeleton,
+    Exoskeleton,
+    CodeControl,
+    LigthingControl,
+}
 #endregion

@@ -10,6 +10,7 @@ public class DummyRobot : MonoBehaviour
     public bool isFaulty;
     public SpriteRenderer spriteRenderer;
     public PhraseType phrase;
+    public JumpScareType jumpScareType;
 
     [Space(15)]
     [Header("Sprites")]

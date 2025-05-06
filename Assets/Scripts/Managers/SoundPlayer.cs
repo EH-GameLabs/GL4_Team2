@@ -81,4 +81,13 @@ public class SoundPlayer : MonoBehaviour
 
         audioPlayer.PlayOneShot(clip);
     }
+
+    public void PriorityPlayClip(string file_path)
+    {
+        if (audioPlayer.isPlaying) audioPlayer.Stop();
+
+        AudioClip clip = Resources.Load(file_path) as AudioClip;
+
+        audioPlayer.PlayOneShot(clip);
+    }
 }

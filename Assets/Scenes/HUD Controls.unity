@@ -308,6 +308,7 @@ MonoBehaviour:
   UIContainer: {fileID: 377787913}
   startingGameUI: 1
   dialoguePanel: {fileID: 1517618002}
+  fader: {fileID: 1598049911}
 --- !u!4 &39279207
 Transform:
   m_ObjectHideFlags: 0
@@ -612,6 +613,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &194225915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 194225916}
+  m_Layer: 0
+  m_Name: JumpScarePosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &194225916
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194225915}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.06350899, y: -1.5, z: -6.5}
+  m_LocalScale: {x: 0.1, y: 0.099999994, z: 0.1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &214721369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,6 +1091,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5f711e6d4200500448c9ebf0587216f7, type: 2}
   - {fileID: 11400000, guid: 5f711e6d4200500448c9ebf0587216f7, type: 2}
   currentDayIndex: 0
+  currentDay: {fileID: 0}
 --- !u!1 &428439879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,6 +1337,56 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.07, y: 1.15, z: -0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &515721492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 515721494}
+  - component: {fileID: 515721493}
+  m_Layer: 0
+  m_Name: JumpScareManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &515721493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515721492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b0d84ee6436ee4d921aa6e0461529e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isJumpScareActive: 0
+  audioJumpScareDelay: 2
+  EndoskeletonJumpScareDelay: 5
+  jumpScarePosition: {fileID: 194225916}
+  lightingJumpScareActive: 0
+  lightingJumpScareDelay: 3
+--- !u!4 &515721494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515721492}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2716,6 +2799,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 377787912}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1598049911 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4375656234833624527, guid: 495d695afdf441249b368236407e4028,
+    type: 3}
+  m_PrefabInstance: {fileID: 377787912}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1608962274
 GameObject:
   m_ObjectHideFlags: 0
@@ -3620,3 +3709,5 @@ SceneRoots:
   - {fileID: 344210698}
   - {fileID: 106022437}
   - {fileID: 462813974}
+  - {fileID: 515721494}
+  - {fileID: 194225916}
