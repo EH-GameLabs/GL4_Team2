@@ -1209,6 +1209,7 @@ GameObject:
   - component: {fileID: 462813973}
   - component: {fileID: 462813971}
   - component: {fileID: 462813970}
+  - component: {fileID: 462813975}
   m_Layer: 0
   m_Name: Zoom Camera
   m_TagString: MainCamera
@@ -1342,6 +1343,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &462813975
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462813969}
+  m_Enabled: 1
 --- !u!1 &515721492
 GameObject:
   m_ObjectHideFlags: 0

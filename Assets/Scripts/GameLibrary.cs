@@ -45,8 +45,8 @@ public enum JumpScareType
     None,
     Audio,
     Endoskeleton,
-    Exoskeleton,
-    CodeControl,
+    NOT_WORKING_1,
+    NOT_WORKING_2,
     LigthingControl,
 }
 #endregion

@@ -13,7 +13,7 @@ public class DummyRobot : MonoBehaviour
     public JumpScareType jumpScareType;
 
     [Space(15)]
-    [Header("Sprites")]
+    [Header("GRAPHICS")]
     public Sprite frontSprite;
     public Sprite backSprite;
     public Sprite leftSprite;

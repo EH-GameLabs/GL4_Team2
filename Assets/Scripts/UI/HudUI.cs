@@ -85,6 +85,8 @@ public class HudUI : BaseUI
 
     public void ControlEndoskeleton()
     {
+        if (!CameraManager.Instance.IsMainCameraActive()) return;
+
         DummyRobot dummyRobot = FindAnyObjectByType<DummyRobot>();
 
         VariantManager.Instance.ControlEndoskeleton();

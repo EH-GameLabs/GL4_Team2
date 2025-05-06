@@ -87,4 +87,9 @@ public class CameraManager : MonoBehaviour
         mainCamera.gameObject.SetActive(true);
         isMoving = false;
     }
+
+    internal bool IsMainCameraActive()
+    {
+        return mainCamera.gameObject.activeSelf;
+    }
 }
