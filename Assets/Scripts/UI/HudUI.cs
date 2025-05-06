@@ -75,4 +75,9 @@ public class HudUI : BaseUI
     {
         VariantManager.Instance.ControlEndoskeleton();
     }
+
+    public void ControlMotherCode()
+    {
+        VariantManager.Instance.ControlMotherCode();
+    }
 }
