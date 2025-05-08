@@ -10,6 +10,7 @@ public class HudUI : BaseUI
     public void RobotApproved()
     {
         if (RobotSpawner.Instance.robotIn || RobotSpawner.Instance.robotOut) return;
+        SoundPlayer.Instance.PlayClip3("Pulsanti task");
         RobotSpawner.Instance.robotOut = true;
         bool approved = true;
         bool isFaulty = RobotSpawner.Instance.currentRobot.GetComponent<DummyRobot>().isFaulty;
@@ -19,6 +20,7 @@ public class HudUI : BaseUI
     public void RobotRejected()
     {
         if (RobotSpawner.Instance.robotIn || RobotSpawner.Instance.robotOut) return;
+        SoundPlayer.Instance.PlayClip3("Pulsanti task");
         RobotSpawner.Instance.robotOut = true;
         bool approved = false;
         bool isFaulty = RobotSpawner.Instance.currentRobot.GetComponent<DummyRobot>().isFaulty;
@@ -53,16 +55,19 @@ public class HudUI : BaseUI
 
     public void RotateToTheLeft()
     {
+        SoundPlayer.Instance.PlayClip3("Pulsanti task");
         FindAnyObjectByType<DummyRobot>().RotateToTheLeft();
     }
 
     public void RotateToTheRight()
     {
+        SoundPlayer.Instance.PlayClip3("Pulsanti task");
         FindAnyObjectByType<DummyRobot>().RotateToTheRight();
     }
 
     public void ControlAudio()
     {
+        SoundPlayer.Instance.PlayClip3("Pulsanti task");
         DummyRobot dummyRobot = FindAnyObjectByType<DummyRobot>();
         VariantManager.Instance.ControlAudio(dummyRobot.phrase);
 
@@ -74,6 +79,7 @@ public class HudUI : BaseUI
 
     public void ControlLighting()
     {
+        SoundPlayer.Instance.PlayClip3("Pulsanti task");
         DummyRobot dummyRobot = FindAnyObjectByType<DummyRobot>();
 
         if (dummyRobot.jumpScareType == JumpScareType.LigthingControl)
@@ -86,6 +92,7 @@ public class HudUI : BaseUI
 
     public void ControlEndoskeleton()
     {
+        SoundPlayer.Instance.PlayClip3("Pulsanti task");
         if (!CameraManager.Instance.IsMainCameraActive()) return;
 
         DummyRobot dummyRobot = FindAnyObjectByType<DummyRobot>();
@@ -100,6 +107,7 @@ public class HudUI : BaseUI
 
     public void ControlMotherCode()
     {
+        SoundPlayer.Instance.PlayClip3("Pulsanti task");
         VariantManager.Instance.ControlMotherCode();
     }
 }

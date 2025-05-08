@@ -24,4 +24,6 @@ public class SO_Day : ScriptableObject
     public string dialogue;
     [Tooltip("How long the dialogue lasts on screen in seconds")]
     public float dialogueDuration;
+    public AudioClip dayStartAudio;
+
 }

@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Timeline;
 
 public class DialogueUI : BaseUI
 {
     [SerializeField] private float time;
+
+    private void Awake()
+    {
+        SoundPlayer.Instance.audioPlayer.PlayOneShot(DayManager.Instance.currentDay.dayStartAudio);
+    }
 
     private void Update()
     {

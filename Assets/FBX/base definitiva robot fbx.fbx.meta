@@ -1,0 +1,279 @@
+fileFormatVersion: 2
+guid: 56656c3fe774e654e9feedfa5deea8a1
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: base
+    second: {fileID: 2100000, guid: a812992220ab3144791b62159e5f73f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bottone blu
+    second: {fileID: 2100000, guid: 883191e825fc370448b92754bf2930c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bottone rosso
+    second: {fileID: 2100000, guid: ebe4d1e0a2c0c60478abe9f721b22698, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bottone verde
+    second: {fileID: 2100000, guid: c0b59ff9f1b737d4996f346dd85efc92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: frecce
+    second: {fileID: 2100000, guid: 67872744b5c6fb1419f3bfd3abe4f4ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gomma - cavo
+    second: {fileID: 2100000, guid: 6e0d5213a2cd8f247ac1353a60a21571, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gomma - ruote
+    second: {fileID: 2100000, guid: 953307e9e98723347abfbc5a34e6ceb7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: luce
+    second: {fileID: 2100000, guid: 5b8e051883da6f541aa015c24583247a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metallo - post infissi
+    second: {fileID: 2100000, guid: 23702774d67ad5049b95a4becdfa5cae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metallo 1 - schermo
+    second: {fileID: 2100000, guid: bb91cfaf27a602044bca52b46769a07f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metallo 10 - maniglia
+    second: {fileID: 2100000, guid: bcc79f53898567d4ab4543d02c51eafc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metallo 11 - rivestimenti scatola muro
+    second: {fileID: 2100000, guid: 3eae524e2e67c0e469d7802782ea747f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metallo 12 - triangolo 2
+    second: {fileID: 2100000, guid: 6e9fced9b14f62e4ca09844922aa467f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metallo 13 - pedana 360
+    second: {fileID: 2100000, guid: 97c3d5a210afe1442beb59bbd4c3ba63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metallo 15 - macchina
+    second: {fileID: 2100000, guid: d3b36d383197b7648923747583c6c2dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metallo 16 - presa elettrica
+    second: {fileID: 2100000, guid: a62db8fbb747234478afe280e5cb25b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metallo 2 - bottoni
+    second: {fileID: 2100000, guid: b62d936f186753842a940c4e3402f986, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metallo 3 - infisso
+    second: {fileID: 2100000, guid: a495109af76ef8547bae814b5166497d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metallo 4 - porta 1
+    second: {fileID: 2100000, guid: 0c6cf11a45a35204e92ab26ed083c241, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metallo 5 - porta 2
+    second: {fileID: 2100000, guid: 441adff5c3ed23a40a6455734532b13e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metallo 6 - carrellino
+    second: {fileID: 2100000, guid: b023779b5692a264d97ed39e7065d7cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metallo 7 - rullo
+    second: {fileID: 2100000, guid: ad574ee394b456748ad438403330d214, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metallo 8 - lampada
+    second: {fileID: 2100000, guid: b43c56e74b9d9934397a1ae178e3706c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metallo 9 - scatola
+    second: {fileID: 2100000, guid: f20fc8dab7014a84fb87d2139be2256e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pareti
+    second: {fileID: 2100000, guid: 62da9ae434d5690479d5183d30d2e910, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pavimento + soffitto
+    second: {fileID: 2100000, guid: 78613a6a13528584abd031a601ab9bcd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pedana 360
+    second: {fileID: 2100000, guid: ef1a8fc92bf18274c846802398ca9801, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: piastrelle
+    second: {fileID: 2100000, guid: 391dc2b3eaf98d746ab82323e0a03b7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastica - scatola
+    second: {fileID: 2100000, guid: 0d23e315560b2514fbb2ae2fbdbeee14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastica - scatola muro
+    second: {fileID: 2100000, guid: d41d76291d744744e9f76bab3d44a9a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastica - schermo
+    second: {fileID: 2100000, guid: d2f2e31657e1524428cd5da49d0f821d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastica - triangolo1
+    second: {fileID: 2100000, guid: 3a1650b6e429846438432a89839b81a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastica- macchina
+    second: {fileID: 2100000, guid: d3d85edad76b5964784c17aad2bbfe7c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: schermo
+    second: {fileID: 2100000, guid: cd72a6a7ae33d9f4bb41e8fd52a57501, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

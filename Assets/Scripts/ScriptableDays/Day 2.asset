@@ -40,3 +40,4 @@ MonoBehaviour:
   lightFlickerProbability: 10
   dialogue: Test dialogue 2
   dialogueDuration: 5
+  dayStartAudio: {fileID: 8300000, guid: 2cbb960db228b9e478bf4290ed636f10, type: 3}

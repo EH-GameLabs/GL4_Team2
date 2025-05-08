@@ -13,14 +13,15 @@ MonoBehaviour:
   m_Name: Day 1
   m_EditorClassIdentifier: 
   robots:
-  - {fileID: 8723138825880292145, guid: 82a49abf284c65a48bde119c8ca964f9, type: 3}
-  - {fileID: 8723138825880292145, guid: df9bbd08497628549ac5ff43fa7f2ae4, type: 3}
-  - {fileID: 8723138825880292145, guid: fec8d26e11ddaa74984f6ecec3e2c020, type: 3}
-  - {fileID: 8723138825880292145, guid: fe957fae643ec874990309a2da632fa1, type: 3}
-  - {fileID: 8723138825880292145, guid: c2f69934cb198b142a6092cc6cc7e8e7, type: 3}
-  - {fileID: 8723138825880292145, guid: 8da96360f960a02489461a81b966bc2c, type: 3}
-  - {fileID: 8723138825880292145, guid: ea9b4ca81fc1dc342a6919002f789c04, type: 3}
-  robotNumber: 1
+  - {fileID: 8723138825880292145, guid: 91df5109c430d524db1bc5e75ba5682b, type: 3}
+  - {fileID: 8723138825880292145, guid: 1b67b47cb873c1e4fa8a967cf4077289, type: 3}
+  - {fileID: 8723138825880292145, guid: 3d8856894c2e6d6439852e5b415db4ff, type: 3}
+  - {fileID: 8723138825880292145, guid: 2c36f3fd90e67d843b19c2e2de470ef0, type: 3}
+  - {fileID: 8723138825880292145, guid: f77e8ab056088154780a084ec3187583, type: 3}
+  - {fileID: 8723138825880292145, guid: 94fed0294c074ef47bbdf47fc115dc6a, type: 3}
+  - {fileID: 8723138825880292145, guid: 901c153d9751cca46b82febe44cd3ebf, type: 3}
+  - {fileID: 8723138825880292145, guid: aa55d3cf4e468f74ca092aa09d0ce8ff, type: 3}
+  robotNumber: 8
   scaryEffects:
   - {fileID: 8300000, guid: 9bf66505f55d3d245a8964d7cbf726d2, type: 3}
   - {fileID: 8300000, guid: 8b8ae6ef5cf486142a3e0a02291f48c4, type: 3}
@@ -38,5 +39,6 @@ MonoBehaviour:
   soundProbability: 0
   lightFlickerTimer: 1
   lightFlickerProbability: 0
-  dialogue: Test dialogue
+  dialogue: Welcome to S.L.A.V.E. Corp!
   dialogueDuration: 5
+  dayStartAudio: {fileID: 8300000, guid: 0d9d6d290c006a34093fe0f7afbb8f44, type: 3}

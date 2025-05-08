@@ -66,7 +66,7 @@ public class VariantManager : MonoBehaviour
                 break;
         }
 
-        SoundPlayer.Instance.PlayClip(filePath);
+        SoundPlayer.Instance.PlayClip2(filePath);
     }
 
 

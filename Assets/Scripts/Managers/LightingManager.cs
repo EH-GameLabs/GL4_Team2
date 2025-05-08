@@ -50,13 +50,13 @@ public class LightingManager : MonoBehaviour
         {
             // get paramters
             Light light = inGameLights[i];
-            MeshRenderer lightRenderer = light.gameObject.GetComponent<MeshRenderer>();
-            int emissionPropertyID = Shader.PropertyToID("_EmissionColor");
+            //MeshRenderer lightRenderer = light.gameObject.GetComponent<MeshRenderer>();
+            //int emissionPropertyID = Shader.PropertyToID("_EmissionColor");
 
             // modify parameters
             light.intensity = 0;
-            lightRenderer.material.color = Color.black;
-            lightRenderer.material.SetColor(emissionPropertyID, Color.black);
+            //lightRenderer.material.color = Color.black;
+            //lightRenderer.material.SetColor(emissionPropertyID, Color.black);
         }
         // disable flickering
         disableFlickering = true;
@@ -68,13 +68,13 @@ public class LightingManager : MonoBehaviour
         {
             // get paramters
             Light light = inGameLights[i];
-            MeshRenderer lightRenderer = light.gameObject.GetComponent<MeshRenderer>();
-            int emissionPropertyID = Shader.PropertyToID("_EmissionColor");
+            //MeshRenderer lightRenderer = light.gameObject.GetComponent<MeshRenderer>();
+            //int emissionPropertyID = Shader.PropertyToID("_EmissionColor");
 
             // modify parameters
             light.intensity = baseIntensities[i];
-            lightRenderer.material.color = Color.white;
-            lightRenderer.material.SetColor(emissionPropertyID, Color.white);
+            //lightRenderer.material.color = Color.white;
+            //lightRenderer.material.SetColor(emissionPropertyID, Color.white);
         }
         // enable flickering
         disableFlickering = false;

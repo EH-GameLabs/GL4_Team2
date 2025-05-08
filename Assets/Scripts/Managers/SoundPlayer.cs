@@ -12,7 +12,11 @@ public class SoundPlayer : MonoBehaviour
 
     // internal variables
     private AudioClip[] scaryEffects;
-    private AudioSource audioPlayer;
+    public AudioSource audioPlayer;
+    public AudioSource audioPlayer2;
+    public AudioSource audioPlayer3;
+    public AudioSource audioPlayer4;
+    public AudioSource audioPlayer5;
     private float soundTimer;
     private float soundProbability;
     private float maxSoundLength = 5f;
@@ -33,8 +37,12 @@ public class SoundPlayer : MonoBehaviour
 
     void Start()
     {
-        // get sound player
-        audioPlayer = GetComponent<AudioSource>();
+        // get sound players
+        audioPlayer = GetComponents<AudioSource>()[0];
+        audioPlayer2 = GetComponents<AudioSource>()[1];
+        audioPlayer3 = GetComponents<AudioSource>()[2];
+        audioPlayer3 = GetComponents<AudioSource>()[3];
+        audioPlayer3 = GetComponents<AudioSource>()[4];
     }
 
     void Update()
@@ -68,9 +76,9 @@ public class SoundPlayer : MonoBehaviour
     private IEnumerator PlaySound(AudioClip sound, float seconds)
     {
         // play sound for given timer
-        audioPlayer.PlayOneShot(sound);
+        audioPlayer5.PlayOneShot(sound);
         yield return new WaitForSeconds(seconds);
-        audioPlayer.Stop();
+        audioPlayer5.Stop();
     }
 
     public void PlayClip(string file_path)
@@ -82,12 +90,33 @@ public class SoundPlayer : MonoBehaviour
         audioPlayer.PlayOneShot(clip);
     }
 
-    public void PriorityPlayClip(string file_path)
+    public void PlayClip2(string file_path)
     {
-        if (audioPlayer.isPlaying) audioPlayer.Stop();
+        if (audioPlayer3.isPlaying) return;
 
         AudioClip clip = Resources.Load(file_path) as AudioClip;
 
-        audioPlayer.PlayOneShot(clip);
+        audioPlayer3.PlayOneShot(clip);
+    }
+
+    public void PlayClip3(string file_path)
+    {
+        if (audioPlayer4.isPlaying) audioPlayer4.Stop();
+
+        AudioClip clip = Resources.Load(file_path) as AudioClip;
+
+        audioPlayer4.PlayOneShot(clip);
+    }
+
+    public void PriorityPlayClip(string file_path)
+    {
+        if (audioPlayer2.isPlaying)
+        {
+            audioPlayer.Stop();
+            audioPlayer2.Stop();
+        }
+        AudioClip clip = Resources.Load(file_path) as AudioClip;
+
+        audioPlayer2.PlayOneShot(clip);
     }
 }
