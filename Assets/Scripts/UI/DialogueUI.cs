@@ -7,7 +7,7 @@ public class DialogueUI : BaseUI
 {
     [SerializeField] private float time;
 
-    private void Awake()
+    private void OnEnable()
     {
         SoundPlayer.Instance.audioPlayer.PlayOneShot(DayManager.Instance.currentDay.dayStartAudio);
     }

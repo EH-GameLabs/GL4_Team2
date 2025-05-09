@@ -10,11 +10,11 @@ public class BlackFade : MonoBehaviour
     [SerializeField] float timeToHold;
     [SerializeField] bool fadeToBlack;
     [SerializeField] bool fadeFromBlack;
+    [SerializeField] Sprite[] transitions;
     bool onlyFadeIn;
 
     Image blackScreen;
     TextMeshProUGUI textBox;
-
 
     private void Awake()
     {
@@ -27,7 +27,8 @@ public class BlackFade : MonoBehaviour
         // pause game and start fading screen
         onlyFadeIn = false;
         fadeToBlack = true;
-        textBox.text = "Day " + (DayManager.Instance.currentDayIndex + 1).ToString();
+        //textBox.text = "Day " + (DayManager.Instance.currentDayIndex + 1).ToString();
+        blackScreen.sprite = transitions[DayManager.Instance.currentDayIndex];
         Time.timeScale = 0.0f;
     }
 
@@ -67,7 +68,7 @@ public class BlackFade : MonoBehaviour
 
     public void FadeOut()
     {
-        blackScreen.color = new Color(0, 0, 0, 1); // skip to fading out step
+        blackScreen.color = new Color(1, 1, 1, 1); // skip to fading out step
     }
 
     IEnumerator HoldBlackScreen()

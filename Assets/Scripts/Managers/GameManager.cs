@@ -23,14 +23,14 @@ public class GameManager : MonoBehaviour
         }
 
         // load player prefs
-        LoadDay();
+        //LoadDay();
     }
 
 
     // Triggers game over screen in UI
     public void GameOverFired()
     {
-        UIManager.instance.ShowUI(UIManager.GameUI.Lose);
+        UIManager.instance.ShowUI(UIManager.GameUI.Lose1);
     }
 
     // Triggers second game over screen in UI

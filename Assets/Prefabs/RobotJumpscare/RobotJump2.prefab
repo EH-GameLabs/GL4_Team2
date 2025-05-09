@@ -241,7 +241,7 @@ MonoBehaviour:
   isFaulty: 1
   spriteRenderer: {fileID: 5727152193358002478}
   phrase: 1
-  jumpScareType: 0
+  jumpScareType: 1
   frontSprite: {fileID: 21300000, guid: 0a6f27eefd130614289db617a33df6e6, type: 3}
   backSprite: {fileID: 21300000, guid: 01dbee7c2f11754418e57385d81ac9d9, type: 3}
   leftSprite: {fileID: 21300000, guid: eaf7d097dd3e85d4faaff61657ccaa50, type: 3}

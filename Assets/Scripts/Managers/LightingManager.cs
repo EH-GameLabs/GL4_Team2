@@ -54,7 +54,8 @@ public class LightingManager : MonoBehaviour
             //int emissionPropertyID = Shader.PropertyToID("_EmissionColor");
 
             // modify parameters
-            light.intensity = 0;
+            light.intensity = 0f;
+            //light.color = new Color(45/255, 0, 1, 1);
             //lightRenderer.material.color = Color.black;
             //lightRenderer.material.SetColor(emissionPropertyID, Color.black);
         }
@@ -68,6 +69,7 @@ public class LightingManager : MonoBehaviour
         {
             // get paramters
             Light light = inGameLights[i];
+            light.color = new Color(1, 1, 1, 1);
             //MeshRenderer lightRenderer = light.gameObject.GetComponent<MeshRenderer>();
             //int emissionPropertyID = Shader.PropertyToID("_EmissionColor");
 

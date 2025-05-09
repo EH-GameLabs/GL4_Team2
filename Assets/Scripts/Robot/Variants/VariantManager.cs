@@ -141,7 +141,7 @@ public class VariantManager : MonoBehaviour
         }
     }
 
-    private void DisableEndoSkeleton(DummyRobot dummyRobot)
+    public void DisableEndoSkeleton(DummyRobot dummyRobot)
     {
         if (dummyRobot.spriteRenderer.sprite == dummyRobot.frontEndoSprite)
             dummyRobot.spriteRenderer.sprite = dummyRobot.frontSprite;
@@ -153,7 +153,7 @@ public class VariantManager : MonoBehaviour
             dummyRobot.spriteRenderer.sprite = dummyRobot.rightSprite;
     }
 
-    private void EnableEndoSkeleton(DummyRobot dummyRobot)
+    public void EnableEndoSkeleton(DummyRobot dummyRobot)
     {
         if (dummyRobot.spriteRenderer.sprite == dummyRobot.frontSprite)
             dummyRobot.spriteRenderer.sprite = dummyRobot.frontEndoSprite;

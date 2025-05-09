@@ -39,6 +39,6 @@ MonoBehaviour:
   soundProbability: 0
   lightFlickerTimer: 1
   lightFlickerProbability: 0
-  dialogue: Welcome to S.L.A.V.E. Corp!
+  dialogue: Benvenuti a S.L.A.V.E. Corp!
   dialogueDuration: 5
   dayStartAudio: {fileID: 8300000, guid: 0d9d6d290c006a34093fe0f7afbb8f44, type: 3}

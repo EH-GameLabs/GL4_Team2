@@ -25,6 +25,11 @@ public class MainMenuUI : BaseUI
         }
     }
 
+    public void GoToStartEmail()
+    {
+        UIManager.instance.ShowUI(UIManager.GameUI.Email);
+    }
+
     public void GoToHud()
     {
         Time.timeScale = 1f;
@@ -38,6 +43,13 @@ public class MainMenuUI : BaseUI
         GoToHud();
     }
 
+    public void GoToLatestDay()
+    {
+        Destroy(RobotSpawner.Instance.currentRobot);
+        DayManager.Instance.ChangeDay(GameManager.Instance.dayReached);
+        GoToHud();
+    }
+
     public void GoToOptions()
     {
         UIManager.instance.ShowUI(UIManager.GameUI.Option);
@@ -47,6 +59,11 @@ public class MainMenuUI : BaseUI
     {
         GameManager.Instance.ResetDays();
         GameManager.Instance.ReloadGame();
+    }
+
+    public void WarnDelete()
+    {
+        UIManager.instance.ShowUI(UIManager.GameUI.WarnDelete);
     }
 
     public void ExitGame()

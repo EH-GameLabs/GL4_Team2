@@ -20,7 +20,7 @@ public class JumpScareManager : MonoBehaviour
 
     public static JumpScareManager Instance { get; private set; }
 
-    private const string PATH = "Scary_Effects/";
+    private const string PATH = "Sound Game/";
 
     private void Awake()
     {
@@ -38,7 +38,7 @@ public class JumpScareManager : MonoBehaviour
     private IEnumerator PlayAudioJumpScareCoroutine()
     {
         yield return new WaitForSeconds(audioJumpScareDelay);
-        SoundPlayer.Instance.PriorityPlayClip(PATH + "JumpScare1");
+        SoundPlayer.Instance.PriorityPlayClip(PATH + "Jumpscare Urlo");
         Debug.Log("JumpScare1");
         isJumpScareActive = false;
     }
@@ -47,28 +47,32 @@ public class JumpScareManager : MonoBehaviour
     #region ENDOSKELETON JUMP SCARE
     public void PlayEndoskeletonJumpScare(DummyRobot dummyRobot)
     {
-        isJumpScareActive = true;
-        dummyRobot.spriteRenderer.enabled = false;
-        dummyRobot.motherCode.SetActive(false);
+        if (!isJumpScareActive)
+        {
+            isJumpScareActive = true;
+            dummyRobot.spriteRenderer.enabled = false;
+            return;
+        }
 
         StartCoroutine(PlayEndoskeletonJumpScareCoroutine(dummyRobot));
     }
 
     private IEnumerator PlayEndoskeletonJumpScareCoroutine(DummyRobot dummyRobot)
     {
-        yield return new WaitForSeconds(EndoskeletonJumpScareDelay);
+        VariantManager.Instance.EnableEndoSkeleton(dummyRobot);
 
-        SoundPlayer.Instance.PriorityPlayClip(PATH + "JumpScare2");
+        SoundPlayer.Instance.PriorityPlayClip(PATH + "Jumpscare Urlo");
         Debug.Log("JumpScare2");
 
         dummyRobot.spriteRenderer.enabled = true;
-        dummyRobot.motherCode.SetActive(true);
         Vector3 startingPos = dummyRobot.gameObject.transform.position;
         dummyRobot.gameObject.transform.position = jumpScarePosition.position;
 
         yield return new WaitForSeconds(2f);
         dummyRobot.gameObject.transform.position = startingPos;
         isJumpScareActive = false;
+        VariantManager.Instance.DisableEndoSkeleton(dummyRobot);
+
     }
 
     #endregion
@@ -102,10 +106,15 @@ public class JumpScareManager : MonoBehaviour
     {
         yield return new WaitForSeconds(lightingJumpScareDelay);
 
-        SoundPlayer.Instance.PriorityPlayClip(PATH + "JumpScare5");
+        SoundPlayer.Instance.PriorityPlayClip(PATH + "Jumpscare Urlo");
         Debug.Log("JumpScare5");
 
         dummyRobot.spriteRenderer.enabled = true;
+        Vector3 startingPos = dummyRobot.gameObject.transform.position;
+        dummyRobot.gameObject.transform.position = jumpScarePosition.position;
+
+        yield return new WaitForSeconds(2f);
+        dummyRobot.gameObject.transform.position = startingPos;
         isJumpScareActive = false;
     }
     #endregion

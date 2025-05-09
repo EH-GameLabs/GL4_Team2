@@ -12,12 +12,15 @@ public class UIManager : MonoBehaviour
     {
         NONE,
         MainMenu,
+        Email,
         HUD,
         Dialogue,
         Pause,
         Win,
         Lose,
+        Lose1,
         Option,
+        WarnDelete
     }
 
     private Dictionary<GameUI, IGameUI> registeredUIs = new Dictionary<GameUI, IGameUI>();

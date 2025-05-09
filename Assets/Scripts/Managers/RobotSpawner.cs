@@ -63,7 +63,7 @@ public class RobotSpawner : MonoBehaviour
         else if (DayManager.Instance.currentDayIndex < DayManager.Instance.days.Length - 1)
         {
             // otherwise move to next dayif there still are
-            Debug.Log("Day passed!");
+            //Debug.Log("Day passed!");
             // TODO add UI for day passing
 
             DayManager.Instance.GoToNextDay();
@@ -78,6 +78,7 @@ public class RobotSpawner : MonoBehaviour
             UIManager.instance.ShowUI(UIManager.GameUI.Win);
             Debug.Log("Victory!");
         }
+        
     }
 
     void Update()
